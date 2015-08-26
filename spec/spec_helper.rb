@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'byebug'
 
 module SimpleCov::Configuration
   def clean_filters
