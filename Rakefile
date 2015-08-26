@@ -18,7 +18,16 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/aldavidson/featureflags"
   gem.license = "MIT"
   gem.summary = %Q{Simple ENV-based implementation of Feature Flags}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = <<-END
+Simple implementation of the 'Feature Flags' pattern as a Ruby gem.
+Allows you to set defaults in a Hash of the form:
+
+  ```{ feature_name_1: true, feature_name_2: false, feature_with_variations: 'A' }```
+
+and override them with correspondingly-named environment variables. 
+In the example above, you could enable the feature 'feature_name_2' with the environment variable 'FEATURE_NAME_2'.
+
+END
   gem.email = "apdavidson@gmail.com"
   gem.authors = ["Al Davidson"]
   # dependencies defined in Gemfile
