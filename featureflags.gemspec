@@ -12,14 +12,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.authors = ["Al Davidson"]
   s.date = "2015-08-26"
-  s.description = "Simple implementation of the 'Feature Flags' pattern as a Ruby gem.
-Allows you to set defaults in a Hash of the form:
-
-  { feature_name_1: true, feature_name_2: false, feature_with_variations: 'A' }
-
-and override them with correspondingly-named environment variables. 
-In the example above, you could enable the feature 'feature_name_2' with the environment variable 'FEATURE_NAME_2'.
-"
+  s.description = "TODO: longer description of your gem"
   s.email = "apdavidson@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
