@@ -3,7 +3,7 @@
 Simple implementation of the 'Feature Flags' pattern as a Ruby gem.
 Allows you to set defaults in a Hash of the form:
 
-  ```{ feature_name_1: true, feature_name_2: false, feature_with_variations: 'A' }```
+  { feature_name_1: true, feature_name_2: false, feature_with_variations: 'A' }
 
 and override them with correspondingly-named environment variables. 
 In the example above, you could enable the feature 'feature_name_2' with the environment variable 'FEATURE_NAME_2'.
@@ -12,18 +12,18 @@ In the example above, you could enable the feature 'feature_name_2' with the env
 
 In your gemfile: 
 
-  ```gem "ministryofjustice-featureflags"```
+  gem "ministryofjustice-featureflags"
 
 === If you're using Rails:
 
 You can set defaults during Rails initialization, usually with a dedicated file in config/initializers:
 
-defaults = {
-  some_feature: true,
-  some_other_feature: false,
-  another_feature: 'variant-1' # <- any non-falsey value will be treated as enabled 
-}
-Features::FeatureFlags.init!(defaults)
+  defaults = {
+    some_feature: true,
+    some_other_feature: false,
+    another_feature: 'variant-1' # <- any non-falsey value will be treated as enabled 
+  }
+  Features::FeatureFlags.init!(defaults)
 
 === Setting Flags With Environment Variables
 
@@ -33,29 +33,29 @@ You can *also* override these values by starting Rails with the correspondingly-
 
 In your application code:
 
-```
+
   if FeatureFlags::Features.enabled?(:some_feature)
     # do something
   else
     # do something different
-```
+
 
 Groups of features:
 
-```
+
   # ALL
   if FeatureFlags::Features.all_enabled?(:some_feature, :some_other_feature)
   
   # ANY
   if FeatureFlags::Features.any_enabled?(:some_feature, :some_other_feature)
   
-```
+
 == Non-boolean Flags
 
 When checking enabled?, any non-false-y value will return true. 
 This allows you to transparently store non-boolean values in flags, for instance in A/B testing:
 
-```
+
   Features::FeatureFlags.init!(my_feature_variant: 'variant-A')
 
   case Features::FeatureFlags.flag(:my_feature)
@@ -64,7 +64,7 @@ This allows you to transparently store non-boolean values in flags, for instance
   when 'variant-B'
     # do something else...
   end
-```
+
 
 == Contributing to featureflags
  
