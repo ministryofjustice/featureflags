@@ -24,7 +24,7 @@ module FeatureFlags
     # return all features which are enabled by default 
     # i.e. not-false, regardless of environment variables
     def self.enabled_by_default
-      @flags.select{|k,v| v}.map{|k,v| k}
+      @flags.select{|k,v| v}.keys
     end
 
     def self.any_enabled?(*names)
